@@ -34,3 +34,11 @@ module l2_switch {
 	@NoRuntime depends embox.compat.libc.all
 	@NoRuntime depends embox.compat.posix.pthread_key
 }
+
+@NoCode
+module l2_switch_config {
+	@InitFS
+	source "l2_switch.json"
+
+	depends embox.fs.driver.initfs
+}
